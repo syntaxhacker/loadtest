@@ -1,0 +1,22 @@
+{
+	"name": "k6",
+	"version": "1.0.0",
+	"license": "MIT",
+	"dependencies": {
+		"@babel/core": "^7.12.10",
+		"@babel/preset-env": "^7.12.11",
+		"babel-loader": "^8.2.2",
+		"core-js": "^3.8.2",
+		"faker": "^5.1.0",
+		"webpack": "^5.11.1",
+		"webpack-cli": "^4.3.1"
+	},
+	"scripts": {
+		"pretest": "webpack",
+		"precloud": "webpack",
+		"prelocal": "webpack",
+		"local": "k6 run dist/test.main.js",
+		"test": "docker-compose run k6 run /dist/test.main.js",
+		"cloud": "docker-compose run k6 cloud /dist/test.main.js"
+	}
+}
